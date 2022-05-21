@@ -1,3 +1,4 @@
+/*seccion foto de perfil, nombre y acerca de*/
 .row{
     padding: 10px;
 }
@@ -5,4 +6,37 @@ div{
 background-color: black;
 text-align: center;
 color: aliceblue;
+}
+
+/*estilo de la foto de perfil (aplicando mediaqwerys*/
+@media (min-width: 576px){
+    #fotodeperfil{
+        position:absolute;
+        width: 16%;
+        border-radius: 100%;
+        box-shadow: 0px 0px 15px grey;
+        left: 0.8%;
+        top: 620px;
+    }
+}
+@media (max-width: 575px){
+    #fotodeperfil{
+        position:absolute;
+        width: 19%;
+        border-radius: 100%;
+        box-shadow: 0px 0px 15px grey;
+        left: 40%;
+        top: 620px;
+    }
+}
+
+/*al bajar la resolucion de 400 a 399 la foto de perfil se desfaza al centro del banner, aun no puedo corregir la ubicacion de la foto para resuluciones menores a 399
+
+al subir la resolucion de 697 a 698 el nombre queda tapado por la foto de perfil
+*/
+
+/*etiqueta nombre*/
+#nombre{
+    font-weight: bold;
+    margin-top: 10%;
 }
