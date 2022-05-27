@@ -13,17 +13,21 @@ color: aliceblue;
     #fotodeperfil{
         position:absolute;
         width: 16%;
+        /*
         border-radius: 100%;
+        */
         box-shadow: 0px 0px 15px grey;
         left: 0.8%;
-        top: 620px;
+        top: 600px;
     }
 }
 @media (max-width: 575px){
     #fotodeperfil{
         position:absolute;
         width: 19%;
+        /*
         border-radius: 100%;
+        */
         box-shadow: 0px 0px 15px grey;
         left: 40%;
         top: 620px;
