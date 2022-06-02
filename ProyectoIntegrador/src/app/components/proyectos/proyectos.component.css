@@ -1,6 +1,9 @@
 .row{
     padding: 20px;
-    background-color: #03140a;
+    background-color: #02200f;
+    /* para hacer un color degradado
+    background: linear-gradient(#03140a, #3b7955);
+    */
     color: aliceblue;
 }
 .contenedor{

@@ -16,9 +16,9 @@ color: aliceblue;
         /*
         border-radius: 100%;
         */
-        box-shadow: 0px 0px 15px grey;
+        box-shadow: 0px 0px 15px navajowhite;
         left: 0.8%;
-        top: 600px;
+        top: 610px;
     }
 }
 @media (max-width: 575px){
@@ -28,14 +28,11 @@ color: aliceblue;
         /*
         border-radius: 100%;
         */
-        box-shadow: 0px 0px 15px grey;
+        box-shadow: 0px 0px 15px navajowhite;
         left: 40%;
-        top: 620px;
+        top: 770px;
     }
 }
-
-/*al bajar la resolucion de 400 a 399 la foto de perfil se desfaza al centro del banner, aun no puedo corregir la ubicacion de la foto para resuluciones menores a 399
-*/
 
 /*etiqueta nombre*/
 #nombre{
