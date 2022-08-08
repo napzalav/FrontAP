@@ -18,7 +18,9 @@ img{
     border-width: medium;
 }
 
-/* Para la vista de celular*/
+ /*-------------Para la vista de celular-------------*/
+
+
 @media (max-width: 575px){
     .container{
         flex-direction: column;
