@@ -3,10 +3,11 @@
     padding: 10px;
 }
 div{
-background-color: black;
+background-color: #080819;
 text-align: center;
 color: aliceblue;
 }
+/*background alternativo #080819;*/
 
 /*estilo de la foto de perfil (aplicando media query*/
 @media (min-width: 576px){
@@ -22,7 +23,7 @@ color: aliceblue;
         border-radius: 100%;
         box-shadow: 0px 0px 15px black;
         left: 0.8%;
-        top: 500px;
+        top: 610px;
     }
 }
 @media (max-width: 575px){
@@ -38,7 +39,7 @@ color: aliceblue;
         border-radius: 100%;
         box-shadow: 0px 0px 15px black;
         left: 40%;
-        top: 790px;
+        top: 610px;
     }
 }
 

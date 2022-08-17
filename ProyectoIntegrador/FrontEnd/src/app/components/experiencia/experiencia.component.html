@@ -1,6 +1,26 @@
 <div class="row" id="Experiencia">
     <h1>Experiencia Laboral</h1>
     <div class="col-lg-11">
+
+
+        <div *ngFor="let elemento of experiencias">
+            <ul>
+                <li>
+                    <h1>{{elemento.trabajo}}</h1> - 
+                    <h3>({{elemento.anioInicio}}-{{elemento.anioFin}})</h3>
+                        
+                </li>
+                
+                <h3>{{elemento.empresa}}</h3>
+                
+                <p>{{elemento.descripcion}}</p>
+            </ul>
+        </div>
+
+
+<!--
+
+    
         <ul>
             <li>
                 <h1>Trabajo 1</h1> - 
@@ -24,3 +44,5 @@
         </ul>
     </div>
 </div>
+
+-->

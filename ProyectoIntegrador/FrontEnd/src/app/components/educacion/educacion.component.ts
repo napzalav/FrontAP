@@ -8,16 +8,19 @@ import { Estudio } from '../../../modelo/Estudio';
 })
 export class EducacionComponent implements OnInit {
 
-  estudio: Estudio = new Estudio("Analista de sistemas", "2020-01-01", "2021-12-12", true, "UNCUYO", "Mendoza");
-  estudio2: Estudio = new Estudio("Programador", "2020-01-01", "2021-12-12", false, "UNCUYO", "Mendoza");
-  estudio3: Estudio = new Estudio("Autodidacta", "2022-01-01", "Forever", false, "Internet", "Mendoza");
+  estudio: Estudio = new Estudio("Autodidacta", "Internet", false, "Aprendiendo constantemente!");
+
+  estudio2: Estudio = new Estudio("Full Stack Developer JR", "Argentina Programa", false, "Me encuentro cursando #YoProgramo, la segunda parte de Argentina Programa, este porfolio es una práctica de los conocimientos adquiridos en dicha capacitación.");
+  
+  estudio3: Estudio = new Estudio("Estudiante", "FreeCodeCamp",false, "Resuelvo los retos ofrecidos por la plataforma para continuar aprendiendo.");
+
   estudios: Estudio[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
     this.estudios[0] = this.estudio;
-    this.estudios[1] = this.estudio2; 
+    this.estudios[1] = this.estudio2;
     this.estudios[2] = this.estudio3;
   }
 

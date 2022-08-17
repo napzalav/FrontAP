@@ -1,49 +1,20 @@
 <div class="row" id="Educacion">
     <h1>Educacion</h1>
     <div class="col-lg-11">
-        
 
-        <div class="carta">
-            <h3 *ngFor="let elemento of estudios"><!--{{elemento.titulo}}--> </h3>
-        </div>
-
+    
         <div *ngFor="let elemento of estudios">
-            <div class="carta">
-                <h3>{{elemento.titulo}}</h3>
-                <p>{{elemento.institucion}}</p>
-                <p>{{elemento.fechaInicio}}</p>
-                <p>{{elemento.fechaFin}}</p>
-                <p *ngIf="elemento.finalizado; then thenBlock else elseBlock"></p>
-                    <ng-template #thenBlock>Finalizado</ng-template>
-                    <ng-template #elseBlock>En curso</ng-template>
-                <p>{{elemento.provincia}}</p>
-            </div>
+            <ul>
+                <li>
+                    <h1>{{elemento.titulo}}</h1> - 
+                    <h3 *ngIf="elemento.finalizado; then thenBlock else elseBlock"></h3>
+                        <ng-template #thenBlock>(Finalizado)</ng-template>
+                        <ng-template #elseBlock>(En curso)</ng-template>
+                </li>
+                
+                <h3>{{elemento.institucion}}</h3>
+                
+                <p>{{elemento.descripcion}}</p>
+            </ul>
         </div>
         
-        <div class="carta">
-            <h3 *ngFor="let elemento of estudios"><!--{{elemento.titulo}}--></h3>
-        </div>
-        
-        <ul>
-            <li>
-                <h1>Educacion 1</h1> - 
-                <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptas cum quaerat ipsum veniam, sit exercitationem similique culpa suscipit consequuntur modi ea quod delectus temporibus amet ex? Commodi, quidem consequatur.</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Educacion 2</h1> - 
-                <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptas cum quaerat ipsum veniam, sit exercitationem similique culpa suscipit consequuntur modi ea quod delectus temporibus amet ex? Commodi, quidem consequatur.</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Educacion 3</h1> - 
-                <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptas cum quaerat ipsum veniam, sit exercitationem similique culpa suscipit consequuntur modi ea quod delectus temporibus amet ex? Commodi, quidem consequatur.</p>
-        </ul>
-    </div>
-</div>

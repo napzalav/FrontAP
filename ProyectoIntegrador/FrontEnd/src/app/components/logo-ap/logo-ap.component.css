@@ -1,8 +1,7 @@
 body {
-    padding: 88px 0px 0;
+    padding: 0px 0px 0;
 }
 .header {
-    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -16,6 +15,15 @@ body {
 }
 
 /*
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+
 
 .container{
     display: flex;
