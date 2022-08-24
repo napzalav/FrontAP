@@ -6,7 +6,7 @@
                     <img src="../../../assets/APLogo.png" id="logoAP">
                 </div>
         
-                <!--este boton es el menu hamburguesa-->>
+                <!--este boton es el menu hamburguesa-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,7 +36,8 @@
                     </ul>
         
                     <div>
-                        <button type="button" class="btn btn-outline-success btn-sm" (click)="login()" >Login</button>
+                        <button type="button" class="btn btn-outline-success btn-sm" (click)="login()" *ngIf="!isLogged">Login</button>
+                        <button type="button" class="btn btn-outline-success btn-sm" (click)="onLogOut()" *ngIf="isLogged">Salir</button>
                     </div>
                 </div>
         
