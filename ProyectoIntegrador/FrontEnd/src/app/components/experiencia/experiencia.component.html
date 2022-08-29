@@ -1,9 +1,40 @@
 <div class="row" id="Experiencia">
     <h1>Experiencia Laboral</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-outline-light" routerLink="/nuevaexp" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
+    </div>
+    
+    <div class="col-lg-1"></div>
     <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                    <td>
+                        <h2>{{Experiencia.nombreE}}</h2>
+                    </td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-info" routerLink="/editexp/{{Experiencia.id}}">
+                            <i class="bi bi-pencil-fill">EDITAR</i>
+                        </button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-danger" (click)="delete(Experiencia.id)">
+                            <i class="bi bi-trash3-fill">BORRAR</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+</div>
+        
 
 
-        <div *ngFor="let elemento of experiencias">
+<!--deje comentado
+<div *ngFor="let elemento of experiencias">
             <ul>
                 <li>
                     <h1>{{elemento.trabajo}}</h1> - 
@@ -16,9 +47,8 @@
                 <p>{{elemento.descripcion}}</p>
             </ul>
         </div>
+======================================
 
-
-<!--
 
     
         <ul>
@@ -43,6 +73,6 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptas cum quaerat ipsum veniam, sit exercitationem similique culpa suscipit consequuntur modi ea quod delectus temporibus amet ex? Commodi, quidem consequatur.</p>
         </ul>
     </div>
-</div>
+
 
 -->

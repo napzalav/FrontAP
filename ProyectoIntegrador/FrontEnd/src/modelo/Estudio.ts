@@ -1,3 +1,6 @@
+
+
+/*
 export class Estudio{
     titulo:string;
     institucion:string;
@@ -11,4 +14,7 @@ export class Estudio{
         this.descripcion = descripcion;
     }
 }
+
+
+ */
 

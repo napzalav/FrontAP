@@ -3,13 +3,20 @@
 }
 div{
     color: aliceblue;
-    background: #0E0817;
+    background: #0e132c;
 }
+table{
+    color: aliceblue;
+}
+
+/*
 h1, h3{
     display: inline;
 }
 
-/*
+#434662
+#0e132c
+#e1def9
 #420089
 
 #0E0817
