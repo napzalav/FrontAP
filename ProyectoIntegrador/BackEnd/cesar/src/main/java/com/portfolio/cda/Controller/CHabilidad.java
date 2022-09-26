@@ -5,10 +5,10 @@
 */
 package com.portfolio.cda.Controller;
 
-import com.portfolio.cda.Dto.dtoEducacion;
-import com.portfolio.cda.Entity.Educacion;
+import com.portfolio.cda.Dto.dtoHabilidad;
+import com.portfolio.cda.Entity.Habilidad;
 import com.portfolio.cda.Security.Controller.Mensaje;
-import com.portfolio.cda.Service.SEducacion;
+import com.portfolio.cda.Service.SHabilidad;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,72 +25,72 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/educacion")
+@RequestMapping("/habilidad")
 @CrossOrigin
-public class CEducacion {
+public class CHabilidad {
     @Autowired
-    SEducacion sEducacion;
+    SHabilidad sHabilidad;
     
     @GetMapping("/lista")
-    public ResponseEntity<List<Educacion>> list(){
-        List<Educacion> list = sEducacion.list();
+    public ResponseEntity<List<Habilidad>> list(){
+        List<Habilidad> list = sHabilidad.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
-        if(!sEducacion.existsById(id)){
+    public ResponseEntity<Habilidad> getById(@PathVariable("id")int id){
+        if(!sHabilidad.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
         
-        Educacion educacion = sEducacion.getOne(id).get();
-        return new ResponseEntity(educacion, HttpStatus.OK);
+        Habilidad habilidad = sHabilidad.getOne(id).get();
+        return new ResponseEntity(habilidad, HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
-        if(!sEducacion.existsById(id)){
+        if(!sHabilidad.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        sEducacion.delete(id);
-        return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
+        sHabilidad.delete(id);
+        return new ResponseEntity(new Mensaje("Habilidad eliminada"), HttpStatus.OK);
     }
     
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
-        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
+    public ResponseEntity<?> create(@RequestBody dtoHabilidad dtohabilidad){
+        if(StringUtils.isBlank(dtohabilidad.getNombreH())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if(sEducacion.existsByNombreE(dtoeducacion.getNombreE())){
+        if(sHabilidad.existsByNombreH(dtohabilidad.getNombreH())){
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Educacion educacion = new Educacion(
-                dtoeducacion.getNombreE(), dtoeducacion.getDescripcionE()
+        Habilidad habilidad = new Habilidad(
+                dtohabilidad.getNombreH(), dtohabilidad.getPorcentajeH()
         );
-        sEducacion.save(educacion);
-        return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
+        sHabilidad.save(habilidad);
+        return new ResponseEntity(new Mensaje("Habilidad creada"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion){
-        if(!sEducacion.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoHabilidad dtohabilidad){
+        if(!sHabilidad.existsById(id)){
+            return new ResponseEntity(new Mensaje("No existe el ID"),HttpStatus.NOT_FOUND);
         }
-        if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.getByNombreE(dtoeducacion.getNombreE()).get().getId() != id){
-            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
+        if(sHabilidad.existsByNombreH(dtohabilidad.getNombreH()) && sHabilidad.getByNombreH(dtohabilidad.getNombreH()).get().getId() != id){
+            return new ResponseEntity(new Mensaje("Esa habilidad ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
+        if(StringUtils.isBlank(dtohabilidad.getNombreH())){
             return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
         }
         
-        Educacion educacion = sEducacion.getOne(id).get();
+        Habilidad habilidad = sHabilidad.getOne(id).get();
         
-        educacion.setNombreE(dtoeducacion.getNombreE());
-        educacion.setDescripcionE(dtoeducacion.getDescripcionE());
+        habilidad.setNombreH(dtohabilidad.getNombreH());
+        habilidad.setPorcentajeH(dtohabilidad.getPorcentajeH());
         
-        sEducacion.save(educacion);
+        sHabilidad.save(habilidad);
         
-        return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Habilidad actualizada"), HttpStatus.OK);
     }
     
 }
