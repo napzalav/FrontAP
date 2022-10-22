@@ -1,9 +1,11 @@
 /*seccion foto de perfil, nombre y acerca de*/
 .row{
-    padding: 10px;
+    padding: 20px;
+    background: rgb(1,0,15);
+    background: linear-gradient(90deg, rgba(1,0,15,1) 0%, rgba(22,1,46,1) 48%, rgba(31,4,48,1) 100%);
 }
 div{
-background-color: #080819;
+/* background-color: #080819; */
 text-align: center;
 color: aliceblue;
 }

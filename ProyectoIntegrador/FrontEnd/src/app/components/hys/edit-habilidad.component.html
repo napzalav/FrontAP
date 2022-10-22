@@ -1,4 +1,50 @@
-<div class="container" *ngIf="habilidad">
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100" *ngIf="habilidad">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Edita tu Habilidad!</h2>
+                            <p class="text-white-50 mb-5">Por favor, modifica tu habilidad</p>
+
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="nombreH">Nombre de la habilidad</label>
+                                    <input type="text" id="nombreH" name="nombreH" class="form-control form-control-lg"
+                                        [(ngModel)]="habilidad.nombreH" required />
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="porcentajeH">Porcentaje de la habilidad</label>
+                                    <input type="number" min="1" max="100" placeholder="Valor del 1 al 100" id="porcentajeH" name="porcentajeH"
+                                        class="form-control form-control-lg" [(ngModel)]="habilidad.porcentajeH"
+                                        required />
+                                </div>
+
+                                <button class="btn btn-primary mt-3">
+                                    Actualizar habilidad
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- <div class="container" *ngIf="habilidad">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -16,4 +62,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
