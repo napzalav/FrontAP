@@ -33,6 +33,10 @@ h1{
     text-align: center;
 }
 
+a{
+    margin: 5px;
+}
+
 /* .contenedor{
     width: auto;
 }
