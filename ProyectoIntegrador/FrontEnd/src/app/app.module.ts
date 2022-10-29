@@ -26,6 +26,10 @@ import { NeweducacionComponent } from './components/educacion/neweducacion.compo
 import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
 import { EditHabilidadComponent } from './components/hys/edit-habilidad.component';
 import { NewHabilidadComponent } from './components/hys/new-habilidad.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,8 @@ import { NewHabilidadComponent } from './components/hys/new-habilidad.component'
     NeweducacionComponent,
     EditEducacionComponent,
     EditHabilidadComponent,
-    NewHabilidadComponent
+    NewHabilidadComponent,
+    EditAcercaDeComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,9 @@ import { NewHabilidadComponent } from './components/hys/new-habilidad.component'
     
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

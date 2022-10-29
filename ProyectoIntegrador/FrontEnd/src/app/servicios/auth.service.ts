@@ -11,6 +11,8 @@ import { NuevoUsuario } from 'src/modelo/nuevo-usuario';
 })
 export class AuthService {
   // authURL = 'http://localhost:8080/auth/';
+  // authURL = 'https://backendcda.herokuapp.com/auth/';
+
   URL = environment.URL + 'auth/';
 
   constructor(private httpClient: HttpClient) { }
