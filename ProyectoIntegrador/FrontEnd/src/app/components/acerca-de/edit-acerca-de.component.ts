@@ -23,7 +23,7 @@ export class EditAcercaDeComponent implements OnInit {
       data =>{
         this.persona = data;
       }, err =>{
-        alert("Error al modificar la educacion");
+        alert("Error al modificar");
         this.router.navigate(['']);
       }
     )
