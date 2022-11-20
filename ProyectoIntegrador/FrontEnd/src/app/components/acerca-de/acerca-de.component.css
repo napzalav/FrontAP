@@ -15,7 +15,7 @@ color: aliceblue;
 @media (min-width: 576px){
     #fotodeperfil{
         position:absolute;
-        width: 16%;
+        width: 12%;
         /*
         opcional,puedo dejar la foto en un marco cuadrado quitando el border-radius
         border-radius: 100%;
