@@ -1,9 +1,110 @@
-<div class="row" id="Proyectos">
-    <h1><i>Proyectos Realizados</i></h1>
+<div class="row" id="proyecto">
+    <h1><i>Proyectos realizados</i></h1>
+    <div class="col-lg-10">
+        <button type="button" class="btn btn-outline-light" routerLink="/nuevoproyecto" *ngIf="isLogged">
+            <i class="bi bi-plus-circle">   Agregar Proyecto</i>
+        </button>
+    </div>
 
-    <!-- imagen - titulo - descripcion - urlProyecto - urlRepositorio -->
+    <!-- <div>
+        <h2>Nombre del proyecto</h2>
+        <p>Descripcion del proyecto</p>
+        <p>link de la pagina</p>
+        <p>link del repositorio</p>
+    </div> -->
 
-    <div class="card" style="width: 18rem;">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Proyecto of proyecto">
+                    <td>
+                        <h2>{{Proyecto.nombreP}}</h2>
+                        <p>{{Proyecto.descripcionP}}</p>
+                        <p>Link de la página: {{Proyecto.pagina}}</p>
+                        <p>Link del Repositorio: {{Proyecto.repositorio}}</p>
+                    </td>
+
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-info" routerLink="/editproyecto/{{Proyecto.id}}">
+                            <i class="bi bi-pencil-fill">EDITAR</i>
+                        </button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-danger" (click)="delete(Proyecto.id)">
+                            <i class="bi bi-trash3-fill">BORRAR</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+
+
+
+
+
+
+
+
+
+    <!-- imagen - nombre - descripcion - urlProyecto - urlRepositorio -->
+
+    <!-- <div class="card" style="width: 18rem;" *ngFor="let Proyecto of proyecto">
+        <img class="card-img-top" src={{Proyecto.img}} alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{Proyecto.nombreP}}</h5>
+            <p class="card-text">{{Proyecto.descripcionP}}</p>
+            <a href={{Proyecto.pagina}} target="_blank" class="btn btn-outline-light"><i class="bi bi-joystick"> Probar</i></a>
+            <a href={{Proyecto.repositorio}} target="_blank" class="btn btn-primary"><i class="bi bi-code"> Code</i></a>
+        </div>
+
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-outline-info" routerLink="/editproyecto/{{Proyecto.id}}">
+                    <i class="bi bi-pencil-fill">Editar</i>
+                </button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-outline-danger" (click)="delete(Proyecto.id)">
+                    <i class="bi bi-trash3-fill">Borrar</i>
+                </button>
+            </td>
+        </div>
+    </div> -->
+
+    <!-- Fin tarjeta de produccion -->
+
+    <!--Tarjeta Proyecto sin binding 
+        
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="../../../assets/portfolio.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Portfolio Personal</h5>
+            <p class="card-text">Proyecto de portfolio personal para Argentina Programa 2022.</p>
+            <a href="#" target="_blank" class="btn btn-outline-light"><i class="bi bi-joystick"> Probar</i></a>
+            <a href="https://github.com/napzalav/proyecto1" target="_blank" class="btn btn-primary"><i class="bi bi-code"> Code</i></a>
+        </div>
+
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-outline-info" routerLink="/editproyecto/{{proyecto}}">
+                    <i class="bi bi-pencil-fill"></i>
+                </button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-outline-danger" (click)="delete()">
+                    <i class="bi bi-trash3-fill"></i>
+                </button>
+            </td>
+        </div>
+    </div> -->
+
+    <!--fin tarjeta proyecto-->
+
+    <!--Este es el prototipo sin aplicar binding
+        
+        <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../../assets/portfolio.png" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Portfolio Personal</h5>
@@ -55,13 +156,21 @@
         <div class="card-body">
             <h5 class="card-title">Mokepon</h5>
             <p class="card-text">Juego contra la PC</p>
-            <!-- <a href="#" target="_blank" class="btn btn-outline-light"><i class="bi bi-joystick">  Probar</i></a> -->
+            <a href="#" target="_blank" class="btn btn-outline-light"><i class="bi bi-joystick">  Probar</i></a>
             <a href="https://github.com/napzalav/mokepon" target="_blank" class="btn btn-primary"><i class="bi bi-code">
                     Code</i></a>
         </div>
-    </div>
+    </div> -->
 
-    <!-- <div class="contenedor">
+    
+</div>
+
+
+
+
+<!--Este es el primer prototipo no lo uso en produccion
+    
+    <div class="contenedor">
         <div class="col-sm-12 col-md-7 col-lg-7 parte1" >
             <h3>Proyecto1</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis minus nisi doloribus porro quisquam fugiat fugit, natus accusamus quis voluptatem, vel eos assumenda quos culpa quibusdam maxime. Tempore, corporis non.</p>
@@ -88,4 +197,3 @@
             <img src="../../../assets/FO.jpg" class="img-fluid img-proyecto">
         </div>
     </div> -->
-</div>

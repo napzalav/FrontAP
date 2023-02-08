@@ -37,6 +37,10 @@ a{
     margin: 5px;
 }
 
+td{
+    padding: 5px;
+}
+
 /* .contenedor{
     width: auto;
 }

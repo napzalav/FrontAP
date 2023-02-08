@@ -1,0 +1,57 @@
+<section class="vh-100 gradient-custom">
+	<div class="container py-5 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class="card bg-dark text-white" style="border-radius: 1rem;">
+					<div class="card-body p-5 text-center">
+
+						<div class="mb-md-5 mt-md-4 pb-5">
+
+							<h2 class="fw-bold mb-2 text-uppercase">Nuevo Proyecto!</h2>
+							<p class="text-white-50 mb-5">Por favor, completa tu nuevo proyecto</p>
+
+							<form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+
+								<div class="form-outline form-white mb-4">
+									<label class="form-label" for="nombreP">Nombre del proyecto</label>
+									<input type="text" id="nombreP" name="nombreP" class="form-control form-control-lg"
+										[(ngModel)]="nombreP" required />
+								</div>
+
+								<div class="form-outline form-white mb-4">
+									<label class="form-label" for="descripcionP">Descripcion del proyecto</label>
+									<input type="text" id="descripcionP" name="descripcionP"
+										class="form-control form-control-lg" [(ngModel)]="descripcionP" required />
+								</div>
+
+								<div class="form-outline form-white mb-4">
+									<label class="form-label" for="pagina">URL de la pagina</label>
+									<input type="text" id="pagina" name="pagina"
+										class="form-control form-control-lg" [(ngModel)]="pagina" required />
+								</div>
+
+								<div class="form-outline form-white mb-4">
+									<label class="form-label" for="repositorio">URL del repositorio</label>
+									<input type="text" id="repositorio" name="repositorio"
+										class="form-control form-control-lg" [(ngModel)]="repositorio" required />
+								</div>
+
+								<div class="form-outline form-white mb-4">
+									<label class="form-label" for="img">URL de la imagen</label>
+									<input type="file" id="img" name="img"
+										class="form-control form-control-lg" [(ngModel)]="img" required />
+								</div>
+
+								<button class="btn btn-primary mt-3">
+									Agregar proyecto
+								</button>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
