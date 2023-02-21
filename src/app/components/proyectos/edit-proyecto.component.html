@@ -12,7 +12,7 @@
 
                             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
 
-                                <div class="form-outline form-white mb-4">
+                                <!-- <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="nombreP">Nombre del proyecto</label>
                                     <input type="text" id="nombreP" name="nombreP" class="form-control form-control-lg" [(ngModel)]="proyecto.nombreP" required />
                                 </div>
@@ -20,7 +20,7 @@
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="descripcionP">Descripcion del proyecto</label>
                                     <input type="text" id="descripcionP" name="descripcionP" class="form-control form-control-lg" [(ngModel)]="proyecto.descripcionP" required />
-                                </div>
+                                </div> -->
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="descripcionP">Nombre del proyecto</label>
@@ -32,8 +32,24 @@
                                     <input type="text" id="descripcionP" name="descripcionP" class="form-control form-control-lg" [(ngModel)]="proyecto.descripcionP" required />
                                 </div>
 
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="pagina">Agrega Url de la web</label>
+                                    <input type="text" id="pagina" name="pagina" class="form-control form-control-lg" [(ngModel)]="proyecto.pagina" required />
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="repositorio">Agrega Url del Repositorio</label>
+                                    <input type="text" id="repositorio" name="repositorio" class="form-control form-control-lg" [(ngModel)]="proyecto.repositorio" required />
+                                </div>
+ 
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="img">Agrega una imagen</label>
+                                    <input type="file" id="img" name="img"
+                                        class="form-control form-control-lg" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" />
+                                </div>
+
                                 <button class="btn btn-primary mt-3">
-                                    Actualizar experiencia
+                                    Actualizar proyecto
                                 </button>
 
                             </form>

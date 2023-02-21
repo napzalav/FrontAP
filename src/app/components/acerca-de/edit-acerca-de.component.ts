@@ -12,7 +12,8 @@ import { persona } from 'src/modelo/Persona';
 export class EditAcercaDeComponent implements OnInit {
   persona: persona = null;
 
-  constructor(private activatedRouter: ActivatedRoute,
+  constructor(
+    private activatedRouter: ActivatedRoute,
     private personaService: PersonaService,
     private router: Router,
     public imageService: ImageService) { }
