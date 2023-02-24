@@ -12,12 +12,11 @@ export const environment = {
     authDomain: 'frontendcda.firebaseapp.com',
     messagingSenderId: '366624506119',
   },
-  production: false,
-
-  URL: 'http://localhost:8080/',
-  // URL: 'https://backendcda.onrender.com'
-  // URL: 'https://backendcda.herokuapp.com/'
+  production: true,
+  URL: 'https://backendcda.onrender.com'
+  //URL: 'https://backendcda.herokuapp.com/'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
